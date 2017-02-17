@@ -1,0 +1,105 @@
+@mixin nav-sections($colour){
+  font-weight: 600;
+  border-bottom: 2px solid $colour;
+}
+
+@mixin nav-transition($time){
+  -moz-transition: all $time linear;
+  -o-transition: all $time linear;
+  -webkit-transition: all $time linear;
+  transition: all $time linear;
+}
+
+.site-nav{
+  @include nav-transition(0.5s);
+  background-colour: transparent;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid white;
+  display: table;
+  div{
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .navigation{
+    width: 70%;
+    text-align: inherit;
+    nav > div{
+      padding: 0 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      a{
+        text-decoration: none;
+        letter-spacing: 2px;
+        color: white;
+        &#header-about:hover{
+          @include nav-sections($about-colour);
+        }
+        &#header-skills:hover{
+          @include nav-sections($skills-colour);
+        }
+        &#header-work:hover{
+          @include nav-sections($work-colour);
+        }
+        &#header-references:hover{
+          @include nav-sections($references-colour);
+        }
+      }
+    }
+  }
+  .header-brand{
+    font-family: SummerHearts, Lato, sans-serif;
+    text-align: center;
+    width: 20%;
+    a{
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+    }
+  }
+  .header-contact{
+    @include nav-transition(0.5s);
+    width: 10%;
+    a{
+      @include nav-transition(0.5s);
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $contact-colour;
+    }
+  }
+}
+.has-scrolled{
+  background-color: white;
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: 0 2px 4px -2px #000000;
+   -moz-box-shadow: 0 2px 4px -2px #000000;
+        box-shadow: 0 2px 4px -2px #000000;
+  .navigation > nav > div > a{
+    color: black;
+    &#header-about:hover{
+      @include nav-sections($about-colour);
+    }
+    &#header-skills:hover{
+      @include nav-sections($skills-colour);
+    }
+    &#header-work:hover{
+      @include nav-sections($work-colour);
+    }
+    &#header-references:hover{
+      @include nav-sections($references-colour);
+    }
+  }
+  .header-brand > a{
+    color: black;
+  }
+  .header-contact {
+    background-color: $contact-colour;
+    a{
+      color:white;
+    }
+
+  }
+}

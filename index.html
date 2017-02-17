@@ -1,22 +1,25 @@
 ---
 layout: default
 ---
-
-<div class="section intro-section">
+<div id="home" class="hero section intro-section">
   <div class="intro-wrapper">
     <div class="hero-title">{{ site.hero-title }}</div>
     <div class="hero-subtitle">{{ site.hero-subtitle }}</div>
   </div>
 </div>
-<div class="section about-section">
+<div id="about" class="section about-section">
   <div class="section-heading">About</div>
+  <div class="section-info">{% include sections/about.html %}</div>
 </div>
-<div class="section skills-section">
+<div id="skills" class="section skills-section">
   <div class="section-heading">Skills</div>
+  <div class="section-info">{% include sections/skills.html %}</div>
 </div>
-<div class="section work-section">
+<div id="work" class="section work-section">
   <div class="section-heading">Work</div>
+  <div class="section-info">{% include sections/work.html %}</div>
 </div>
-<div class="section references-section">
+<div id="references" class="section references-section">
   <div class="section-heading">References</div>
+  <div class="section-info">{% include sections/references.html %}</div>
 </div>

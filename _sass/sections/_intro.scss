@@ -1,0 +1,27 @@
+.intro-section{
+  background: url("../images/hero_bg2.jpg") no-repeat center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+  display: table;
+  .intro-wrapper{
+    // padding-bottom: 15vh;
+    color: white;
+    word-spacing: 3px;
+    letter-spacing: 7px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    .hero-title{
+      font-family: SummerHearts, Lato, sans-serif;
+      font-size: 60px;
+    }
+    .hero-subtitle{
+      margin: 20px 0;
+      word-spacing: 2px;
+      letter-spacing: 2px;
+    }
+  }
+}

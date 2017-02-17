@@ -1,10 +1,18 @@
 ---
 ---
+
 $about-colour: #FF0F00;
 $skills-colour: #FFB000;
 $work-colour: #00FF11;
 $references-colour: #FF00F9;
 $contact-colour: #00C8C8;
+
+@import 'navbar';
+@import 'sections/intro';
+@import 'sections/about';
+@import 'sections/skills';
+@import 'sections/work';
+@import 'sections/references';
 
 @font-face {
   font-family: 'SummerHearts';
@@ -15,162 +23,22 @@ body{
   margin:0;
   font-family: Lato, sans-serif;
 }
-.site-nav{
-  background-colour: transparent;
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  border-bottom: 1px solid white;
-  display: table;
-  div{
-    height: 100%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-  }
-  .navigation{
-    width: 70%;
-    text-align: inherit;
-    nav > div{
-      padding: 0 20px;
-      display: inline-block;
-      text-transform: uppercase;
-      a{
-        text-decoration: none;
-        letter-spacing: 2px;
-        color: white;
-        &#header-about:hover{
-          font-weight: 600;
-          border-bottom: 2px solid $about-colour;
-        }
-        &#header-skills:hover{
-          font-weight: 600;
-          border-bottom: 2px solid $skills-colour;
-        }
-        &#header-work:hover{
-          font-weight: 600;
-          border-bottom: 2px solid $work-colour;
-        }
-        &#header-references:hover{
-          font-weight: 600;
-          border-bottom: 2px solid $references-colour;
-        }
-      }
-    }
-  }
-  .header-brand{
-    font-family: SummerHearts, Lato, sans-serif;
-    text-align: center;
-    width: 20%;
-    a{
-      color: white;
-      text-decoration: none;
-      font-size: 30px;
-    }
-  }
-  .header-contact{
-    width: 10%;
-    a{
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $contact-colour;
-    }
-  }
-}
-.nav-out-of-hero{
-  background-color: white;
-  border-bottom: 1px solid black;
-  .navigation > nav > div > a{
-    color: black;
-    &#header-about:hover{
-      color: black;
-      font-weight: 600;
-      border-bottom: 2px solid $about-colour;
-    }
-    &#header-skills:hover{
-      color: black;
-      font-weight: 600;
-      border-bottom: 2px solid $skills-colour;
-    }
-    &#header-work:hover{
-      color: black;
-      font-weight: 600;
-      border-bottom: 2px solid $work-colour;
-    }
-    &#header-references:hover{
-      color: black;
-      font-weight: 600;
-      border-bottom: 2px solid $references-colour;
-    }
-  }
-  .header-brand > a{
-    color: black;
-  }
-  .header-contact {
-    background-color: $contact-colour;
-    a{
-      color:white;
-    }
-
-  }
-}
-
 .section{
-  height: 100vh;
+  height: 95vh;
   width: 100%;
-  padding-top: 20px;
-  .section-heading{
-    font-size: 40px;
-    letter-spacing: 3px;
+  padding-top: 30px;
+  &.hero{
+    height: 100vh;
+    padding-top: 0px
+  }
+  .section-info{
     width: 90%;
     margin: 0 auto;
   }
-  &.about-section > div{
-    color: black;
-    font-weight: 600;
-    border-bottom: 2px solid $about-colour;
-  }
-  &.skills-section > div{
-    color: black;
-    font-weight: 600;
-    border-bottom: 2px solid $skills-colour;
-  }
-  &.work-section > div{
-    color: black;
-    font-weight: 600;
-    border-bottom: 2px solid $work-colour;
-  }
-  &.references-section > div{
-    color: black;
-    font-weight: 600;
-    border-bottom: 2px solid $references-colour;
-  }
-}
-
-.intro-section{
-  background: url("../images/hero_bg.jpg") no-repeat center center;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-transform: uppercase;
-  display: table;
-  .intro-wrapper{
-    // padding-bottom: 15vh;
-    color: white;
-    word-spacing: 3px;
-    letter-spacing: 7px;
-    display: table-cell;
+  .section-heading{
+    font-family: SummerHearts, Lato, sans-serif;
+    font-size: 60px;
     text-align: center;
-    vertical-align: middle;
-    .hero-title{
-      font-family: SummerHearts, Lato, sans-serif;
-      font-size: 60px;
-    }
-    .hero-subtitle{
-      margin: 20px 0;
-      word-spacing: 2px;
-      letter-spacing: 2px;
-    }
+    letter-spacing: 5px;
   }
 }

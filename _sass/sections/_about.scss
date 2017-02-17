@@ -1,0 +1,39 @@
+@mixin bordered-image($radius, $border-width, $colour){
+  border-radius:50%;
+  height: ($radius * 2 + $border-width);
+  width: ($radius * 2 + $border-width);
+  background-color: $colour;
+  img{
+    border-radius:50%;
+    height: ($radius * 2);
+    width: ($radius * 2);
+    padding: ($border-width/2);
+  }
+}
+.about-section{
+  .section-heading{
+    color: $about-colour;
+  }
+  .about-left{
+    width: 50%;
+    float:left;
+    display: inline-block;
+    .round-image{
+      margin: 50px 0 0 100px;
+      @include bordered-image(150px, 5px, $about-colour)
+    }
+    .img-quote{
+      text-align: center;
+      font-family: SummerHearts, Lato, sans-serif;
+      font-height: 40px;
+      letter-spacing: 3px;
+      color: $about-colour;
+      margin-top: 10px;
+    }
+  }
+  .about-right{
+    width: 50%;
+    float:right;
+    display: inline-block;
+  }
+}

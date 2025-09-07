@@ -1,6 +1,7 @@
 ---
 title: 'Mastering Async/Await in JavaScript'
 published: 2025-07-05
+series: 'Javascript Basics'
 draft: false
 description: 'Learn how to handle asynchronous operations in JavaScript using async/await.'
 tags: ['javascript']

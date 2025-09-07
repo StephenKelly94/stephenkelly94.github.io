@@ -1,6 +1,7 @@
 ---
 title: 'Understanding Closures in JavaScript'
 published: 2025-07-01
+series: 'Javascript Basics'
 draft: false
 description: 'A deep dive into closures and their applications in JavaScript.'
 tags: ['javascript']

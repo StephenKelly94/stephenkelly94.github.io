@@ -1,7 +1,7 @@
 ---
 title: 'Showing Off Blog Features'
 published: 2025-07-20
-draft: false
+draft: true
 tags: ['astro', 'demo', 'markdown']
 toc: true
 coverImage:
@@ -149,7 +149,7 @@ When there are multiple character chats in a row, the order of the chat image an
 This is a cool feature!
 :::
 
-:::unicorn
+:::duck
 I agree!
 :::
 ```
@@ -158,19 +158,19 @@ I agree!
 This is a cool feature!
 :::
 
-:::unicorn
+:::duck
 I agree!
 :::
 
 You can specify the alignment (`left` or `right`) to override the default `left, right, left, ...` ordering.
 
 ```md wrap title="Character chats with specific alignment"
-:::unicorn{align="right"}
+:::duck{align="right"}
 Over here, to the right!
 :::
 ```
 
-:::unicorn{align="right"}
+:::duck{align="right"}
 Over here, to the right!
 :::
 

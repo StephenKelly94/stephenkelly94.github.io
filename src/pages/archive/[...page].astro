@@ -3,18 +3,29 @@ import type { GetStaticPaths } from 'astro'
 import Layout from '~/layouts/Layout.astro'
 import { getSortedPosts } from '~/utils'
 import Pagination from '~/components/Pagination.astro'
+import BlockHeader from '~/components/BlockHeader.astro'
 import siteConfig from '~/site.config'
 import PostPreview from '~/components/PostPreview.astro'
 import PageHeader from '~/components/PageHeader.astro'
+import TagsSection from '~/components/TagsSection.astro'
+import SeriesSection from '~/components/SeriesSection.astro'
 
 // Note: Pagination like '/', '/2', '/3' only works with spread param like [...page]
 export const getStaticPaths = (async ({ paginate }) => {
   const sortedPosts = await getSortedPosts()
-  return paginate(sortedPosts.reverse(), { pageSize: siteConfig.pageSize })
+  const pages = paginate(sortedPosts.reverse(), { pageSize: siteConfig.pageSize })
+  // Attach allPosts to each page as a prop
+  return pages.map((p) => ({ ...p, props: { ...(p.props ?? {}), sortedPosts } }))
 }) satisfies GetStaticPaths
 
-const { page } = Astro.props
+const { page, sortedPosts } = Astro.props
 const pageTitle = 'Archive' + (page.currentPage > 1 ? ` - Page ${page.currentPage}` : '')
+
+const postsHaveTags = sortedPosts.some(
+  (post) => post.data.tags && post.data.tags.length > 0,
+)
+
+const postsHaveSeries = sortedPosts.some((post) => post.data.series)
 ---
 
 <Layout title={pageTitle} description="All posts in the archive">
@@ -28,4 +39,20 @@ const pageTitle = 'Archive' + (page.currentPage > 1 ? ` - Page ${page.currentPag
       nextText="Older Posts"
     />
   </div>
+  {
+    postsHaveSeries && (
+      <section>
+        <BlockHeader>Series</BlockHeader>
+        <SeriesSection posts={sortedPosts} />
+      </section>
+    )
+  }
+  {
+    postsHaveTags && (
+      <section>
+        <BlockHeader>Tags</BlockHeader>
+        <TagsSection posts={sortedPosts} />
+      </section>
+    )
+  }
 </Layout>

@@ -5,4 +5,8 @@ avatarImage:
 githubCalendar: 'stephenkelly94'
 ---
 
-Welcome to the example site. This site is meant to show off my custom Astro theme/template **MultiTerm** which creates a coder-ready blog complete with an interactive theme changer, RSS, sitemap, tagging, and markdown extensions.
+Notes from a software engineer who likes to ramble about the things that
+interest him — tech, software, and health & fitness. Random thoughts, quick
+ideas, and the occasional deep dive when something grabs his attention.
+
+No grand plan — just what’s useful, curious, or fun to explore.

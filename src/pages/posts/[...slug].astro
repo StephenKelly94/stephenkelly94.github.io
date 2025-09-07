@@ -2,7 +2,6 @@
 import type { GetStaticPaths } from 'astro'
 import Layout from '~/layouts/Layout.astro'
 import { SeriesGroup, TagsGroup, getSortedPosts } from '~/utils'
-import PostPreview from '~/components/PostPreview.astro'
 import DividerText from '~/components/DividerText.astro'
 import { getCollection, render, type CollectionEntry } from 'astro:content'
 import PostAddendum from '~/components/PostAddendum.astro'
@@ -29,7 +28,7 @@ export const getStaticPaths = (async () => {
   })
 }) satisfies GetStaticPaths
 
-const { post, prev, next } = Astro.props
+const { post } = Astro.props
 const postData = post.data
 const { headings, Content: PostContent } = await render(post)
 const addendum = await getCollection('addendum')
@@ -57,8 +56,6 @@ if (postData.series) {
   const sequenceContext = getPostSequenceContext(post, series.entries)
   nextPostInSeries = sequenceContext.next
 }
-const showSeries = series && series.entries.length > 1
-
 let tags: Collation<'posts'>[] | undefined
 if (postData.tags && postData.tags.length > 0) {
   const tagsGroup = await TagsGroup.build(sortedPosts)
@@ -124,22 +121,6 @@ if (postData.tags && postData.tags.length > 0) {
         <AddendumContent />
       </PostAddendum>
     )
-  }
-  {
-    showSeries && series ? (
-      <section>
-        <DividerText text={`${series.title} Series`} />
-        {series.entries.map((seriesPost) => (
-          <PostPreview post={seriesPost} />
-        ))}
-      </section>
-    ) : prev || next ? (
-      <section>
-        <DividerText text="More Posts" />
-        {prev && <PostPreview post={prev} />}
-        {next && <PostPreview post={next} />}
-      </section>
-    ) : null
   }
   {
     siteConfig.giscus && (

@@ -38,7 +38,7 @@ const config: SiteConfig = {
     },
     {
       name: 'Archive',
-      url: '/posts',
+      url: '/archive',
     },
     {
       name: 'GitHub',

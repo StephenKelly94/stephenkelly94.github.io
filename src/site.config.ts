@@ -165,7 +165,7 @@ const config: SiteConfig = {
   giscus: {
     repo: 'StephenKelly94/stephenkelly94.github.io',
     repoId: 'R_kgDOPGcXHg',
-    category: 'Giscus',
+    category: 'Announcements',
     categoryId: 'DIC_kwDOPGcXHs4CvEB0',
     reactionsEnabled: true, // Enable reactions on post itself
   },
